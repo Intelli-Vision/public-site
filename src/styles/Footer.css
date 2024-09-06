@@ -1,0 +1,28 @@
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--footer-color); /* Use footer color variable */
+}
+
+.footer p {
+  margin: 0;
+  font: var(--text-color);
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #333; /* You can use a variable if desired */
+  margin-right: 10px;
+}
+
+.social-links i {
+  font-size: 20px;
+}
+
+.svg-icon {
+  color: var(--svg-color);
+  height: 25px;
+}

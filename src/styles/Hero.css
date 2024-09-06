@@ -1,0 +1,80 @@
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--background-color);
+  padding-top: 60px;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 25px; /* Adjust padding as needed */
+  color: var(--text-color);
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.hero-section-1 {
+  flex-direction: column; /* Stack content vertically */
+  background-color: var(--primary-color); /* Custom color for section 1 */
+}
+
+.hero-section-2 {
+  flex-direction: row; /* Text on left, image on right */
+  background-color:  var(--secondary-color);; /* Custom color for section 2 */
+}
+
+.hero-section-3 {
+  flex-direction: row-reverse; /* Image on left, text on right */
+  background-color:  var(--teritiary-color);; /* Custom color for section 3 */
+}
+
+.hero-content {
+  flex: 1;
+  text-align: center;
+  padding: 20px; /* Adjust padding to control spacing */
+  box-sizing: border-box;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px; /* Adjust margin */
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 20px; /* Adjust margin */
+}
+
+.hero-content button {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero-content button:hover {
+  background-color: #444;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%; /* Limit image width to half of the section */
+  padding: 0 10px; /* Reduce padding to minimize gap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 50px
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
