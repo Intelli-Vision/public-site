@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { logoURL } from "../data"; // Path to your logo image
 import "../styles/Header.css"; // Import styles
 
-const Header: React.FC = () => {
+export default function Header(){
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -67,5 +67,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;

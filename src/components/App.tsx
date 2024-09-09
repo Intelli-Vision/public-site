@@ -10,10 +10,12 @@ import Footer from './Footer';
 import ContactUs from './ContactUs';
 
 import '../styles/global.css';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <Header />
         <main className="main-content">

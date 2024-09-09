@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Features.css';
 import { features } from '../text';
 
-const Features = () => {
+export default function Features(){
   
   return (
     <section className="features">
@@ -19,5 +19,3 @@ const Features = () => {
     </section>
   );
 };
-
-export default Features;

@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { description, image, keywords, title, url } from "../data";
 
-const SEO = () => {
+export default function SEO(){
   return (
     <div>
       <Helmet>
@@ -23,5 +23,3 @@ const SEO = () => {
     </div>
   );
 };
-
-export default SEO;

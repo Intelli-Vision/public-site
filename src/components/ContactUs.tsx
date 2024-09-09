@@ -9,7 +9,7 @@ interface FormData {
   message: string;
 }
 
-const ContactUs = () => {
+export default function ContactUs(){
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -94,5 +94,3 @@ const ContactUs = () => {
     </section>
   );
 };
-
-export default ContactUs;
