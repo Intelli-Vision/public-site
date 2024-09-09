@@ -1,10 +1,19 @@
-import React from "react";
-
+import React, { useRef } from "react";
+import { heroText } from '../text';
 import "../styles/Hero.css";
 
-const Hero = () => {
+const Hero: React.FC = () => {
+  // Create a ref to scroll to the target section
+  const sectionRefs = useRef<HTMLDivElement[]>([]);
+
+  // Function to scroll to the specific section
+  const scrollToSection = (index: number) => {
+    sectionRefs.current[index]?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const imgUrl =
     "https://i.pcmag.com/imagery/roundups/06JbOb5326HQb5bU3nxwcvF-5..v1702481835.jpg";
+
 
   return (
     <div className="hero">
@@ -13,43 +22,26 @@ const Hero = () => {
           <img src={imgUrl} alt="Intellivision glasses" />
         </div>
         <div className="hero-content">
-          <h1>Revolutionize Your Vision</h1>
-          <p>Experience the future of eyewear with Intellivision.</p>
-          <button className="btn">Learn More</button>
+          <h1>{heroText.landing.title}</h1>
+          <p>{heroText.landing.tagline}</p>
+          <button className="btn" onClick={() => scrollToSection(0)}>Learn More</button>
         </div>
       </div>
-      <div className="hero-section hero-section-2">
-        <div className="hero-content">
-          <h1>See The Future</h1>
-          <p>
-            See the future with our revolutionary smart glasses. Engineered to
-            blend cutting-edge technology with sleek design, these glasses offer
-            an immersive experience like never before. Visualize information,
-            interact with your environment, and access a world of
-            possibilities—all from a device that's as intuitive as it is
-            innovative. Embrace the future today with smart glasses that bring
-            advanced technology right to your eyes, making tomorrow’s vision a
-            reality now.
-          </p>
+      {heroText.pages.map((item, index) => (
+        <div
+          className="hero-section"
+          key={index}
+          ref={(el) => (sectionRefs.current[index] = el as HTMLDivElement)}
+        >
+          <div className="hero-image">
+            <img src={item.image} alt="Intellivision glasses" />
+          </div>
+          <div className="hero-content">
+            <h1>{item.title}</h1>
+            <p>{item.description}</p>
+          </div>
         </div>
-        <div className="hero-image">
-          <img src={imgUrl} alt="Intellivision glasses" />
-        </div>
-      </div>
-      <div className="hero-section hero-section-3">
-        <div className="hero-image">
-          <img src={imgUrl} alt="Intellivision glasses" />
-        </div>
-        <div className="hero-content">
-          <h1>Experience tomorrow, today.</h1>
-          <p>
-            Dive into a new era of technology with our groundbreaking
-            innovations. Our cutting-edge products bring the future into your
-            hands right now, delivering unparalleled performance and vision.
-            Don’t wait for tomorrow—experience the future today.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

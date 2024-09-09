@@ -1,5 +1,7 @@
 .projects {
-  padding: 100px;
+  padding: 50px;
+  padding-top: 20px;
+  margin-top: 80px;
   background-color: var(--font-color);
 }
 

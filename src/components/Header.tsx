@@ -1,25 +1,67 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Header.css'; // Import styles
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { logoURL } from "../data"; // Path to your logo image
+import "../styles/Header.css"; // Import styles
 
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Toggle menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Detect if screen width is mobile size
+  const checkMobileScreen = () => {
+    setIsMobile(window.innerWidth <= 768); // Adjust breakpoint for mobile view
+  };
+
+  useEffect(() => {
+    checkMobileScreen(); // Check on component mount
+    window.addEventListener("resize", checkMobileScreen); // Listen to screen resize
+
+    return () => {
+      window.removeEventListener("resize", checkMobileScreen); // Clean up on unmount
+    };
+  }, []);
+
+  const pages = [
+    { url: "/", label: "Home" },
+    { url: "/features", label: "Features" },
+    { url: "/open-source", label: "Open Source" },
+    { url: "/contact-us", label: "Contact Us" },
+  ];
   return (
     <header className="header">
-      <div className="logo">
-        <Link to="/">
-          <img 
-            src="https://ik.imagekit.io/scdn/Intellivision%20(2).png?updatedAt=1725144885701" 
-            alt="Intellivision Logo" 
-          />
-        </Link>
+      {/* On mobile, clicking the logo toggles the menu */}
+      <div className="logo" onClick={isMobile ? toggleMenu : undefined}>
+        {isMobile ? (
+          <img src={logoURL} alt="Intellivision Logo" />
+        ) : (
+          <Link to="/" className={isMobile ? "mobile-logo" : ""}>
+            <img src={logoURL} alt="Intellivision Logo" />
+          </Link>
+        )}
       </div>
-      <nav className="navbar">
+      {/* Regular Navbar (Hidden on mobile) */}
+      <nav className={`navbar ${isMobile ? "hidden" : ""}`}>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/features">Features</Link></li>
-          <li><Link to="/open-source">Open Source</Link></li>
-          {/* <li><Link to="/investors">Investors</Link></li> */}
-          <li><Link to="/contact-us">Contact Us</Link></li>
+          {pages.map((page, index) => (
+            <li>
+              <Link to={page.url}>{page.label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {/* Mobile Menu (Opened by clicking the logo) */}
+      <nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
+      <ul>
+          {pages.map((page, index) => (
+            <li>
+              <Link to={page.url}>{page.label}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
@@ -27,4 +69,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
