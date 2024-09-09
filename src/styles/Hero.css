@@ -1,37 +1,47 @@
+/* Hero Container */
 .hero {
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: var(--background-color);
-  padding-top: 60px;
+  padding-top: 60px; /* Space for fixed header */
 }
 
+/* Hero Section Styles */
 .hero-section {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100vh;
   padding: 25px; /* Adjust padding as needed */
+  padding-top: 60px;
   color: var(--text-color);
   box-sizing: border-box; /* Ensure padding does not affect width */
+  height: 100vh; /* Full viewport height */
+  flex-direction: row; /* Default to row layout for other sections */
 }
 
+/* Hero Section 1 Styles */
 .hero-section-1 {
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column; /* Stack content and image vertically */
+  align-items: center;
+  justify-content: center;
   background-color: var(--primary-color); /* Custom color for section 1 */
 }
 
-.hero-section-2 {
-  flex-direction: row; /* Text on left, image on right */
-  background-color:  var(--secondary-color);; /* Custom color for section 2 */
+
+/* Hero Section 2 Styles */
+.hero-section:nth-of-type(2) {
+  flex-direction: row-reverse; /* Default to row layout for other sections */
+  background-color: var(--secondary-color); /* Custom color for section 2 */
 }
 
-.hero-section-3 {
-  flex-direction: row-reverse; /* Image on left, text on right */
-  background-color:  var(--teritiary-color);; /* Custom color for section 3 */
+/* Hero Section 3 Styles */
+.hero-section:nth-of-type(3) {
+  background-color: var(--tertiary-color); /* Custom color for section 3 */
 }
 
+/* Common Content Styles */
 .hero-content {
   flex: 1;
   text-align: center;
@@ -39,6 +49,7 @@
   box-sizing: border-box;
 }
 
+/* Headings and Paragraphs in Hero */
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 15px; /* Adjust margin */
@@ -49,6 +60,7 @@
   margin-bottom: 20px; /* Adjust margin */
 }
 
+/* Button Styling */
 .hero-content button {
   background-color: var(--button-color);
   color: var(--text-color);
@@ -62,19 +74,42 @@
   background-color: #444;
 }
 
+/* Image Container */
 .hero-image {
   flex: 1;
   max-width: 50%; /* Limit image width to half of the section */
-  padding: 0 10px; /* Reduce padding to minimize gap */
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  margin-top: 50px
+  margin-top: 20px; /* Adjust as needed */
 }
 
+/* Image Styling */
 .hero-image img {
-  width: 100%;
+  width: 100%; /* Ensure the image scales to fit its container */
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens */
+  .hero-section {
+    flex-direction: column; /* Stack content vertically on small screens */
+  }
+
+  .hero-image {
+    max-width: 100%; /* Full width for smaller screens */
+    margin-top: 20px; /* Space between content and image on mobile */
+  }
+  .hero-section:nth-of-type(2){
+    flex-direction: column;
+  }
+  /* Add top padding for space in dynamically generated sections */
+  .hero-section:nth-of-type(2),
+  .hero-section:nth-of-type(3) {
+    padding-top: 50px; /* Add padding to the top for images */
+  }
 }

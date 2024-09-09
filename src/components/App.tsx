@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import OpenSource from './components/OpenSource';
-import Footer from './components/Footer';
+import Header from './Header';
+import Hero from './Hero';
+import Features from './Features';
+import OpenSource from './OpenSource';
+import Footer from './Footer';
 // import Investors from './components/Investors';
-import ContactUs from './components/ContactUs';
+import ContactUs from './ContactUs';
 
-import './styles/global.css';
+import '../styles/global.css';
 
 function App() {
   return (

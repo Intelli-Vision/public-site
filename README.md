@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+# Intellivision
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/84f1af7e-1693-4978-a31c-18b589a44751/deploy-status)](https://app.netlify.com/sites/intellivision-site/deploys)
 
-## Available Scripts
+Welcome to the **Intellivision** repository! We are a tech startup focused on revolutionizing augmented reality (AR) with our cutting-edge smart glasses. Our mission is to develop lightweight and practical AR solutions that redefine how people interact with the world.
 
-In the project directory, you can run:
+## Product Vision
 
-### `npm start`
+At Intellivision, we believe in empowering individuals and businesses by offering a seamless blend of the digital and physical world. Our smart glasses use advanced AR technology to provide real-time, intuitive information that enhances your everyday experiences. With our product, you can truly "see the future."
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Lightweight Design**: Engineered for comfort and durability.
+- **High-Performance AR**: Smooth and responsive augmented reality integration.
+- **Long Battery Life**: Designed to last throughout the day.
+- **Seamless Connectivity**: Pairs easily with your devices for a connected experience.
+- **Advanced Optics**: Crystal-clear visual experience, even in bright sunlight.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Ensure you have the following tools installed to work with this repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js
+- pnpm (for package management)
+- React
+- TypeScript
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/intellivision.git
+   ```
 
-### `npm run eject`
+2. Navigate into the project directory:
+   ```bash
+   cd intellivision
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install the dependencies using pnpm:
+   ```bash
+   pnpm install
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To start the development server, run:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+pnpm dev
+```
 
-## Learn More
+The app will be available at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To create a production build, run:
+
+```bash
+pnpm build
+```
+
+The optimized files will be in the `dist/` folder.
+
+## Project Structure
+
+- **/src**: Contains all the source code for the application.
+  - **/components**: Reusable React components (e.g., `Header`, `Hero`, `Features`, `Footer`).
+  - **/routes**: React Router routes for managing app navigation.
+  - **/assets**: Static files, such as images and fonts.
+  
+## Contributing
+
+We welcome contributions! To keep the commit history clean, all commits should be squashed before merging.
+
+### Contribution Workflow
+
+1. Fork the repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes, then commit them:
+   ```bash
+   git add .
+   git commit -m "Add feature-name"
+   ```
+4. Rebase and squash commits:
+   ```bash
+   git rebase -i main
+   ```
+   In the interactive rebase, mark all commits as `squash` except the first one.
+   
+5. Push your squashed commits to your branch:
+   ```bash
+   git push origin feature-name
+   ```
+
+6. Submit a pull request.
+
+## License
+
+This project is licensed under the a proprietary license - see the [LICENSE](LICENSE) file for details.

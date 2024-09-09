@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'; // Import jest-dom matchers
-import App from './App'; // Import the component to test
+import App from '../components/App'; // Import the component to test
 const { expect } = require('@jest/globals');
 
 test('renders the App component', () => {

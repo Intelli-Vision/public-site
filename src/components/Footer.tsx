@@ -4,13 +4,9 @@ import { ReactComponent as TwitterIcon } from '../svg/twitter.svg';
 import { ReactComponent as LinkedInIcon } from '../svg/linkedin.svg';
 import { ReactComponent as GithubIcon } from '../svg/github.svg';
 import { ReactComponent as MailIcon } from '../svg/mail.svg';
+import { emailURL, githubURL, linkedInURL, twitterURL } from "../data";
 
 const Footer = () => {
-  const email = "intellivision@noahkmoore.com";
-  const emailURL = `mailto: ${email}}`;
-  const linkedInURL = "https://www.linkedin.com/in/noahkmoore";
-  const twitterURL = "https://twitter.com/noahkmoore";
-  const githubURL = "https://github.com/mooreman11";
   return (
     <footer className="footer">
       <p>© Intellivision — All rights reserved.</p>
