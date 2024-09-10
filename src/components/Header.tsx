@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as MenuIcon } from "../svg/hamburgerMenu.svg";
 import { logoURL } from "../data"; // Path to your logo image
 import "../styles/Header.css"; // Import styles
 
-const Header: React.FC = () => {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -35,15 +36,20 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       {/* On mobile, clicking the logo toggles the menu */}
-      <div className="logo" onClick={isMobile ? toggleMenu : undefined}>
-        {isMobile ? (
-          <img src={logoURL} alt="Intellivision Logo" />
-        ) : (
-          <Link to="/" className={isMobile ? "mobile-logo" : ""}>
+      {isMobile ? (
+        <div className="header mobile">
+          <img className="logo mobile-logo" src={logoURL} alt="Intellivision Logo" />
+          <Link to="/" onClick={isMobile ? toggleMenu : undefined}>
+            <MenuIcon fill="white"/>
+          </Link>
+        </div>
+      ) : (
+        <div className="logo">
+          <Link to="/" className="">
             <img src={logoURL} alt="Intellivision Logo" />
           </Link>
-        )}
-      </div>
+        </div>
+      )}
       {/* Regular Navbar (Hidden on mobile) */}
       <nav className={`navbar ${isMobile ? "hidden" : ""}`}>
         <ul>
@@ -56,16 +62,14 @@ const Header: React.FC = () => {
       </nav>
       {/* Mobile Menu (Opened by clicking the logo) */}
       <nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
-      <ul>
+        <ul>
           {pages.map((page, index) => (
             <li>
-              <Link to={page.url}>{page.label}</Link>
+              <Link to={page.url} onClick={toggleMenu}>{page.label}</Link>
             </li>
           ))}
         </ul>
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

@@ -6,7 +6,7 @@ import { ReactComponent as GithubIcon } from '../svg/github.svg';
 import { ReactComponent as MailIcon } from '../svg/mail.svg';
 import { emailURL, githubURL, linkedInURL, twitterURL } from "../data";
 
-const Footer = () => {
+export default function Footer(){
   return (
     <footer className="footer">
       <p>© Intellivision — All rights reserved.</p>
@@ -51,5 +51,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

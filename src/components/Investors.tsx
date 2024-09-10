@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/InvestorInfo.css";
 
-const Investors: React.FC = () => {
+export default function Investors(){
   return (
     <div className="investor-info">
       <section className="overview">
@@ -73,5 +73,3 @@ const Investors: React.FC = () => {
     </div>
   );
 };
-
-export default Investors;

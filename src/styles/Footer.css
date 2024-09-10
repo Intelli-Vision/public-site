@@ -1,7 +1,10 @@
 .footer {
+  height: 80px; /* Set a fixed height for the header */
   text-align: center;
-  padding: 20px;
-  background-color: var(--footer-color); /* Use footer color variable */
+  padding: 20px 0;
+  width: 100%;
+  background-color: var(--footer-color);
+  color: var(--other-color);
 }
 
 .footer p {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/OpenSource.css";
 import { projects } from "../text";
 
-const OpenSource = () => {
+export default function OpenSource(){
 
   return (
     <section className="projects">
@@ -25,5 +25,3 @@ const OpenSource = () => {
     </section>
   );
 };
-
-export default OpenSource;
