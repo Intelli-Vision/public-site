@@ -3,15 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  background-color: var(--header-color);
+  padding: 15px;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
   box-sizing: border-box;
   height: 80px; /* Set a fixed height for the header */
+  background-color: var(--header-color);
+  color: var(--primary-color);
 }
 
 .logo img {
@@ -75,6 +75,11 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+  .header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
   /* Hide regular navbar on mobile */
   .navbar {
     display: none;
@@ -82,6 +87,7 @@
 
   /* Logo as mobile menu toggle */
   .mobile-logo {
+    height: 75px;
     display: block;
     cursor: pointer;
   }

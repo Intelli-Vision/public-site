@@ -25,14 +25,15 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1; /* Allow the container to grow and push footer to bottom */
+  min-height: 100vh; /* Full viewport height */
+}
+
+.header {
+  z-index: 1000;
+  /* Add any additional header styles */
 }
 
 .main-content {
   flex: 1; /* Allow main content to expand and take available space */
-}
-
-.footer {
-  background-color: var(--footer-color);
-  text-align: center;
-  padding: 20px;
+  margin-top: 80px; /* Adjust if necessary for space below header */
 }
