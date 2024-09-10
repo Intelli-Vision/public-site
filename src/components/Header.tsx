@@ -65,7 +65,7 @@ export default function Header() {
         <ul>
           {pages.map((page, index) => (
             <li>
-              <Link to={page.url}>{page.label}</Link>
+              <Link to={page.url} onClick={toggleMenu}>{page.label}</Link>
             </li>
           ))}
         </ul>
