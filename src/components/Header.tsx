@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as MenuIcon } from "../svg/hamburgerMenu.svg";
+import MenuIcon from "../assets/svgs/hamburgerMenu.svg?react";
 import { logoURL } from "../data"; // Path to your logo image
 import "../styles/Header.css"; // Import styles
 
@@ -38,9 +38,13 @@ export default function Header() {
       {/* On mobile, clicking the logo toggles the menu */}
       {isMobile ? (
         <div className="header mobile">
-          <img className="logo mobile-logo" src={logoURL} alt="Intellivision Logo" />
+          <img
+            className="logo mobile-logo"
+            src={logoURL}
+            alt="Intellivision Logo"
+          />
           <Link to="/" onClick={isMobile ? toggleMenu : undefined}>
-            <MenuIcon fill="white"/>
+            <MenuIcon />
           </Link>
         </div>
       ) : (
@@ -54,7 +58,7 @@ export default function Header() {
       <nav className={`navbar ${isMobile ? "hidden" : ""}`}>
         <ul>
           {pages.map((page, index) => (
-            <li>
+            <li key={index}>
               <Link to={page.url}>{page.label}</Link>
             </li>
           ))}
@@ -64,8 +68,10 @@ export default function Header() {
       <nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
         <ul>
           {pages.map((page, index) => (
-            <li>
-              <Link to={page.url} onClick={toggleMenu}>{page.label}</Link>
+            <li key={index}>
+              <Link to={page.url} onClick={toggleMenu}>
+                {page.label}
+              </Link>
             </li>
           ))}
         </ul>
