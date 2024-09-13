@@ -31,7 +31,7 @@ Ensure you have the following tools installed to work with this repository:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/intellivision.git
+   git clone https://github.com/Intelli-Vision/public-site.git
    ```
 
 2. Navigate into the project directory:
@@ -52,7 +52,7 @@ To start the development server, run:
 pnpm dev
 ```
 
-The app will be available at `http://localhost:3000`.
+The app will be available at `http://localhost:5173`.
 
 ### Building for Production
 
@@ -102,4 +102,4 @@ We welcome contributions! To keep the commit history clean, all commits should b
 
 ## License
 
-This project is licensed under the a proprietary license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under a proprietary license - see the [LICENSE](LICENSE) file for details.

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as MenuIcon } from "../svg/hamburgerMenu.svg";
+import MenuIcon from "../assets/svgs/hamburgerMenu.svg?react";
 import { logoURL } from "../data"; // Path to your logo image
 import "../styles/Header.css"; // Import styles
 

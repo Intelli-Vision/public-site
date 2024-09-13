@@ -1,11 +1,14 @@
+import { describe, test, expect } from 'vitest'
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'; // Import jest-dom matchers
-import App from '../components/App'; // Import the component to test
-const { expect } = require('@jest/globals');
+import { render } from '@testing-library/react'
+import App from '../components/App'
 
-test('renders the App component', () => {
-  render(<App />); // Render the App component
-  const linkElement = screen.getByText(/hello world/i); // Query for text in the component
-  expect(linkElement).toBeInTheDocument(); // Assert that the text is in the document
+describe('<App />', () => {
+  test('App mounts properly', () => {
+    const wrapper = render(<App />)
+    expect(wrapper).toBeTruthy()
+    const div = wrapper.container.querySelector('div')
+    expect(div?.className).toBe('app-container')
+  })
 });
+

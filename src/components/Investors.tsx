@@ -35,7 +35,7 @@ export default function Investors(){
           <img src="https://via.placeholder.com/80" alt="Noah Moore" />
           <h3>Noah Moore</h3>
           <p>CEO & Founder</p>
-          <p>Noah is a visionary leader with extensive experience in the tech industry. He is driving Intellivision's mission to innovate the AR space and deliver cutting-edge solutions.</p>
+          <p>Noah is a visionary leader with extensive experience in the tech industry. He is driving Intellivision&apos;s mission to innovate the AR space and deliver cutting-edge solutions.</p>
         </div>
         <div className="team-member">
           <img src="https://via.placeholder.com/80" alt="Leor Yomtobian" />

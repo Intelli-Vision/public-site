@@ -1,10 +1,11 @@
 import React from "react";
-import "../styles/Footer.css"; // Import component-specific styles
-import { ReactComponent as TwitterIcon } from '../svg/twitter.svg';
-import { ReactComponent as LinkedInIcon } from '../svg/linkedin.svg';
-import { ReactComponent as GithubIcon } from '../svg/github.svg';
-import { ReactComponent as MailIcon } from '../svg/mail.svg';
+import TwitterIcon from '../assets/svgs/twitter.svg?react';
+import LinkedInIcon from '../assets/svgs/linkedin.svg?react';
+import GithubIcon from '../assets/svgs/github.svg?react';
+import MailIcon from "../assets/svgs/mail.svg?react";
 import { emailURL, githubURL, linkedInURL, twitterURL } from "../data";
+
+import "../styles/Footer.css"; // Import component-specific styles
 
 export default function Footer(){
   return (

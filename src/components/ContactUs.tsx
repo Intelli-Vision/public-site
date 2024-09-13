@@ -37,6 +37,7 @@ export default function ContactUs(){
         setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form on success
       }
     } catch (error) {
+      console.log(error);
       setStatus("There was an error sending your message.");
     }
   };
