@@ -35,47 +35,37 @@ export default function Header() {
   ];
   return (
     <header className="header">
-      {/* On mobile, clicking the logo toggles the menu */}
+      <Link to="/" className={isMobile ? "logo" : "logo mobile-logo"}>
+        <img
+          className={isMobile ? "logo" : " logo mobile-logo"}
+          src={logoURL}
+          alt="Intellivision Logo"
+        />
+      </Link>
       {isMobile ? (
-        <div className="header mobile">
-          <img
-            className="logo mobile-logo"
-            src={logoURL}
-            alt="Intellivision Logo"
-          />
-          <Link to="/" onClick={isMobile ? toggleMenu : undefined}>
-            <MenuIcon />
-          </Link>
-        </div>
+          <><Link to="/" onClick={isMobile ? toggleMenu : undefined}>
+          <MenuIcon fill="white" />
+        </Link><nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
+            <ul>
+              {pages.map((page, index) => (
+                <li>
+                  <Link to={page.url} onClick={toggleMenu}>{page.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav></>
       ) : (
-        <div className="logo">
-          <Link to="/" className="">
-            <img src={logoURL} alt="Intellivision Logo" />
-          </Link>
-        </div>
+        <nav className="navbar">
+          <ul>
+            {pages.map((page, index) => (
+              <li>
+                <Link to={page.url}>{page.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       )}
-      {/* Regular Navbar (Hidden on mobile) */}
-      <nav className={`navbar ${isMobile ? "hidden" : ""}`}>
-        <ul>
-          {pages.map((page, index) => (
-            <li key={index}>
-              <Link to={page.url}>{page.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      {/* Mobile Menu (Opened by clicking the logo) */}
-      <nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
-        <ul>
-          {pages.map((page, index) => (
-            <li key={index}>
-              <Link to={page.url} onClick={toggleMenu}>
-                {page.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </header>
   );
+  
 }
