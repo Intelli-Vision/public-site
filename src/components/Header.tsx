@@ -43,17 +43,20 @@ export default function Header() {
         />
       </Link>
       {isMobile ? (
-          <><Link to="/" onClick={isMobile ? toggleMenu : undefined}>
-          <MenuIcon fill="white" />
-        </Link><nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
+        <>
+          <MenuIcon fill="white" onClick={isMobile ? toggleMenu : undefined} />
+          <nav className={`mobile-nav ${isMenuOpen ? "open" : ""}`}>
             <ul>
               {pages.map((page, index) => (
                 <li>
-                  <Link to={page.url} onClick={toggleMenu}>{page.label}</Link>
+                  <Link to={page.url} onClick={toggleMenu}>
+                    {page.label}
+                  </Link>
                 </li>
               ))}
             </ul>
-          </nav></>
+          </nav>
+        </>
       ) : (
         <nav className="navbar">
           <ul>
@@ -67,5 +70,4 @@ export default function Header() {
       )}
     </header>
   );
-  
 }
